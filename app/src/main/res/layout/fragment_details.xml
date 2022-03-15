@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fish"
+            type="com.example.fishwatch.data.model.FishResponse" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fishDetailsRL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".view.fishDetails.DetailsFragment">
+
+            <ImageView
+                android:id="@+id/fishIcon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:imageGallery="@{fish.speciesIllustrationPhoto.src}"
+                android:minHeight="200dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/fishName"
+                style="@style/TextHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                android:text="@{fish.species_Name}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fishIcon" />
+
+            <TextView
+                android:id="@+id/habitatImpact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fishName"
+                app:setData="@{fish.habitatImpacts}" />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/habitatImpact"
+                app:setData="@{fish.location}" />
+
+            <TextView
+                android:id="@+id/management"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/location"
+                app:setData="@{fish.management}" />
+
+            <TextView
+                android:id="@+id/noa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/management"
+                app:setData="@{fish.NOAA_FisheriesRegion}" />
+
+            <TextView
+                android:id="@+id/population"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/noa"
+                app:setData="@{fish.population}" />
+
+            <TextView
+                android:id="@+id/populationStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/population"
+                app:setData="@{fish.populationStatus}" />
+
+            <TextView
+                android:id="@+id/scientificName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/populationStatus"
+                app:setData="@{fish.scientificName}" />
+
+
+            <TextView
+                android:id="@+id/speciesAliases"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scientificName"
+                app:setData="@{fish.speciesAliases}" />
+
+
+            <ImageView
+                android:id="@+id/speciesIllusionPhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="16dp"
+                android:imageGallery="@{fish.speciesIllustrationPhoto.src}"
+                android:minHeight="200dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/speciesAliases" />
+
+            <TextView
+                android:id="@+id/speciesName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/speciesIllusionPhoto"
+                app:setData="@{fish.species_Name}" />
+
+            <TextView
+                android:id="@+id/animalHealth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/speciesName"
+                app:setData="@{fish.animal_Health}" />
+
+            <TextView
+                android:id="@+id/avalability"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/animalHealth"
+                app:setData="@{fish.availability}" />
+
+            <TextView
+                android:id="@+id/biology"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/avalability"
+                app:setData="@{fish.biology}" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
+
