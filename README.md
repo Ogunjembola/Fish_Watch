@@ -7,7 +7,7 @@ Android app that displays a list of sea animals along with detailed information 
 - Fetch and display a list of sea animals
 - View details: name, image, short description
 - Clean UI built with XML layouts
-- Offline-first support (if implemented)
+- Offline-first support 
 
 ## Screenshots
 
@@ -18,7 +18,7 @@ _Not available_
 - **Language**: Kotlin
 - **UI**: XML layouts
 - **Architecture**: MVVM
-- **Networking**: Retrofit (or other HTTP client)
+- **Networking**: Retrofit
 - **Image Loading**: Glide or Coil
 - **Navigation**: Jetpack Navigation Component
 - **State Management**: ViewModel + LiveData
